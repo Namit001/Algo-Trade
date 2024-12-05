@@ -1,0 +1,74 @@
+services:
+  database:
+    image: postgres
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: algo_trade
+    ports:
+      - 5432:5432
+    networks: 
+      - my_networks
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  main_app:
+    build:
+      context: .
+    networks:
+      - my_networks
+    depends_on:
+      database:
+        condition: service_healthy
+      redis: 
+        condition: service_healthy
+
+  redis:
+    image: redis
+    networks:
+      - my_networks
+    ports:
+      - 6379:6379
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    
+  celery_worker:
+    build:
+      context: .
+    networks: 
+      - my_networks
+    depends_on:
+      - database
+      - redis
+    command: celery -A app.tasks worker --loglevel=info
+
+  grafana:
+      image: grafana/grafana:latest
+      environment:
+        - GF_SECURITY_ADMIN_USER=admin
+        - GF_SECURITY_ADMIN_PASSWORD=admin
+      ports:
+        - "3001:3000"  # Access Grafana on http://localhost:3001
+      depends_on:
+        - database
+        - main_app
+        - redis
+        - celery_worker
+      networks:
+        - my_networks
+      volumes:
+        - grafana_data:/var/lib/grafana
+
+volumes:
+  grafana_data: {} 
+
+networks:
+  my_networks:
+    driver: bridge
+

@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pandas
+sqlalchemy
+redis
+celery
+websocket-client
+websockets
+grafana-api
+python-decouple
+celery[redis]
+psycopg2-binary
