@@ -34,7 +34,7 @@ Start the system to fetch real-time data and generate trading signals.<br>
 Use Grafana to monitor system performance and visualize key metrics.
 <h3>Contributors</h3>
 This project was co-developed and engineered by:
-
-
-<b>Nandish:</b> Finance professional and backend developer.<br>
-<b>Namit:</b> Finance professional and backend developer.
+<ul>
+<li><b>Nandish:</b> Finance professional and backend developer.<br></li>
+<li><b>Namit:</b> Finance professional and backend developer.</li>
+</ul>
