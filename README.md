@@ -29,7 +29,7 @@ The Algo Trading System is designed to automate trading and provide actionable '
 </ul>
 
 <h3>Usage</h3>
-Define your trading strategies and indicators in the configuration files.<br>
+Define your trading strategies and indicators in the utils.py file.<br>
 Start the system to fetch real-time data and generate trading signals.<br>
 Use Grafana to monitor system performance and visualize key metrics.
 <h3>Contributors</h3>
