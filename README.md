@@ -26,6 +26,7 @@ The Algo Trading System is designed to automate trading and provide actionable '
 <li><b>Install Docker:</b> Ensure Docker is installed on your system.<br>
 <li><b>Clone the Repository:</b> Clone the Github repository in your system.<br>
 <li><b>Run the Project:</b> Use Docker to build and start the containers.<br>
+</ul>
 
 <h3>Usage</h3>
 Define your trading strategies and indicators in the configuration files.<br>
