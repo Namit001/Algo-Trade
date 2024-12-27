@@ -24,12 +24,12 @@ The Algo Trading System is designed to automate trading and provide actionable '
 <h3>Setup Instructions</h3>
 <ul>
 <li><b>Install Docker:</b> Ensure Docker is installed on your system.<br>
-<li><b>Clone the Repository:</b><br>
+<li><b>Clone the Repository:</b> Clone the Github repository in your system.<br>
 <li><b>Run the Project:</b> Use Docker to build and start the containers.<br>
 
 <h3>Usage</h3>
-Define your trading strategies and indicators in the configuration files.
-Start the system to fetch real-time data and generate trading signals.
+Define your trading strategies and indicators in the configuration files.<br>
+Start the system to fetch real-time data and generate trading signals.<br>
 Use Grafana to monitor system performance and visualize key metrics.
 <h3>Contributors</h3>
 This project was co-developed and engineered by:
